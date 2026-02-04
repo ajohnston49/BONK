@@ -1,0 +1,325 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Rajdhani', sans-serif;
+  background: #0a0a0a;
+  color: #d4fbe5;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Subtle parallax background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/background.jpg') center / cover no-repeat;
+  opacity: 0.18;
+  transform: translateZ(0);
+  will-change: transform;
+  z-index: -1;
+}
+
+/* Smooth parallax scroll effect */
+@media (min-width: 768px) {
+  body {
+    perspective: 1px;
+    transform-style: preserve-3d;
+  }
+}
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #1a1a1a;
+  box-shadow: 0 2px 10px rgba(0, 255, 136, 0.08);
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-block {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 1rem;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.15);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  color: #00ff88;
+  letter-spacing: 1px;
+}
+
+.brand-tagline {
+  font-size: 0.9rem;
+  color: #9adfbe;
+}
+
+/* NAVIGATION */
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.header-nav a {
+  font-family: 'Orbitron', sans-serif;
+  color: #b8ffe0;
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: color 0.25s ease;
+}
+
+.header-nav a:hover,
+.header-nav a[aria-current="page"] {
+  color: #00ff88;
+}
+
+/* --------------------------------------------------
+   MAIN CONTENT
+-------------------------------------------------- */
+main {
+  margin-top: 140px;
+}
+
+/* Panels */
+.panel {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: rgba(20, 20, 20, 0.92);
+  border-left: 4px solid #00ff88;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.08);
+  transform: translateZ(0.001px);
+}
+
+.panel-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(15, 15, 15, 0.85);
+}
+
+.panel-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Bungee', sans-serif;
+  color: #00ff88;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+/* Text */
+.lead {
+  font-size: 1.3rem;
+  color: #dfffee;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #c8eedd;
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------
+   GRID & CARDS
+-------------------------------------------------- */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.card {
+  background: rgba(15, 15, 15, 0.9);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.05);
+}
+
+.card-full {
+  grid-column: 1 / -1;
+}
+
+/* Lists */
+.list {
+  padding-left: 1.2rem;
+  color: #c8eedd;
+}
+
+.list li {
+  margin-bottom: 0.6rem;
+}
+
+/* --------------------------------------------------
+   BUTTONS
+-------------------------------------------------- */
+.btn-primary,
+.btn-ghost {
+  display: inline-block;
+  padding: 0.75rem 1.6rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: #00ff88;
+  color: #0a0a0a;
+  border: 1px solid #00ff88;
+}
+
+.btn-primary:hover {
+  background: #0a0a0a;
+  color: #00ff88;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #00ff88;
+  color: #00ff88;
+}
+
+.btn-ghost:hover {
+  background: #00ff88;
+  color: #0a0a0a;
+}
+
+.cta-row {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* --------------------------------------------------
+   PROFILE SECTION
+-------------------------------------------------- */
+.profile-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.profile-copy {
+  flex: 1;
+}
+
+.profile-badge {
+  flex: 1;
+  min-width: 260px;
+}
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
+footer {
+  background: #0d0d0d;
+  padding: 1.5rem;
+  text-align: center;
+  color: #7aa892;
+  border-top: 1px solid #1a1a1a;
+  margin-top: 4rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .site-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  main {
+    margin-top: 180px;
+  }
+
+  .panel {
+    padding: 2rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+}
